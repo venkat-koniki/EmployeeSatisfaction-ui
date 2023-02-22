@@ -1,0 +1,72 @@
+<div class="card-header border-0 pb-0">
+	<h4 class="card-title">Sales Summary</h4>
+	<mat-form-field class="dashboard-select" appearance="fill">
+	  <mat-select [(value)]="selected">
+		<mat-option *ngFor="let timeVal of timePeriod" [value]="timeVal.value">
+		  {{timeVal.viewValue}}
+		</mat-option>
+	  </mat-select>
+	</mat-form-field>
+</div>
+<div class="card-body">
+	<div class="d-flex justify-content-between fs-14 mb-4">
+		<span class="text-black">Tuesday</span>
+		<span class="text-black">215,523 pcs</span>
+	</div>
+	
+	<div class="text-center">
+		<!-- <div id="polarAreaCharts"></div> -->
+		
+		<apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [labels]="chartOptions.labels"
+
+    [theme]="chartOptions.theme"
+    [fill]="chartOptions.fill"
+    [yaxis]="chartOptions.yaxis"
+    [stroke]="chartOptions.stroke"
+    [legend]="chartOptions.legend"
+    [plotOptions]="chartOptions.plotOptions"
+  ></apx-chart> 
+  
+	</div>
+	<div class="row mx-0">
+		<div class="col-6 px-0 d-flex align-items-center mb-3">
+			<svg class="mr-3" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="25" height="25" rx="12.5" fill="#FE634E"/>
+			</svg>
+			<div>
+				<h5 class="mb-1 text-black">VIP</h5>
+				<span>42%</span>
+			</div>
+		</div>
+		<div class="col-6 px-0 d-flex align-items-center mb-3">
+			<svg class="mr-3" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="25" height="25" rx="12.5" fill="#707070"/>
+			</svg>
+			<div>
+				<h5 class="mb-1 text-black">Exclusive</h5>
+				<span>52%</span>
+			</div>
+		</div>
+		<div class="col-6 px-0 d-flex align-items-center">
+			<svg class="mr-3" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="25" height="25" rx="12.5" fill="#BFBFBF"/>
+			</svg>
+			<div>
+				<h5 class="mb-1 text-black">Reguler</h5>
+				<span>47%</span>
+			</div>
+		</div>
+		<div class="col-6 px-0 d-flex align-items-center">
+			<svg class="mr-3" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="25" height="25" rx="12.5" fill="#F3F3F3"/>
+			</svg>
+			<div>
+				<h5 class="mb-1 text-black">Economic</h5>
+				<span>58%</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,72 @@
+<!--**********************************
+	Content body start
+***********************************-->
+<div class="content-body">
+	<!-- row -->
+	<div class="container-fluid">
+		<!-- Add Order -->
+		<div class="row">
+			<div class="col-xl-3 col-xxl-4">
+				<div class="row">
+					<div class="col-xl-12 col-md-6">
+						<div class="card">
+							<app-graph-best-selling></app-graph-best-selling>
+						</div>
+					</div>
+					<div class="col-xl-12 col-md-6">
+						<div class="card">
+							<app-latest-sales></app-latest-sales>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-9 col-xxl-8">
+				<div class="row">
+					<div class="col-xl-4 col-xxl-6 col-lg-6 col-sm-6">
+						<div class="card">
+							<app-graph-new-sales></app-graph-new-sales>
+						</div>
+					</div>
+					<div class="col-xl-4 col-xxl-6 col-lg-6 col-sm-6">
+						<div class="card">
+							<app-graph-event-held></app-graph-event-held>
+						</div>
+					</div>
+					<div class="col-xl-4 col-xxl-12 col-lg-12">
+						<div class="card">
+							<app-graph-comparisson></app-graph-comparisson>
+						</div>
+					</div>
+					<div class="col-xl-12">
+						<div class="card" id="sales-revenue">
+							<app-graph-sales-revenue></app-graph-sales-revenue>
+						</div>
+					</div>
+					<div class="col-xl-12">
+						<div class="card">
+							<div class="card-header border-0 pb-sm-0 pb-5">
+								<h4 class="fs-20">Recent Event List</h4>
+								<div class="dropdown dropdown-no-icon custom-dropdown mb-0" ngbDropdown>
+									<div ngbDropdownToggle>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"  >
+											<path d="M12 12.9999C12.5523 12.9999 13 12.5522 13 11.9999C13 11.4477 12.5523 10.9999 12 10.9999C11.4477 10.9999 11 11.4477 11 11.9999C11 12.5522 11.4477 12.9999 12 12.9999Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M12 5.99994C12.5523 5.99994 13 5.55222 13 4.99994C13 4.44765 12.5523 3.99994 12 3.99994C11.4477 3.99994 11 4.44765 11 4.99994C11 5.55222 11.4477 5.99994 12 5.99994Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M12 19.9999C12.5523 19.9999 13 19.5522 13 18.9999C13 18.4477 12.5523 17.9999 12 17.9999C11.4477 17.9999 11 18.4477 11 18.9999C11 19.5522 11.4477 19.9999 12 19.9999Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</div>
+									<div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+										<a class="dropdown-item" href="javascript:void(0);">Details</a>
+										<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<app-recent-event-list [data]="events"></app-recent-event-list>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

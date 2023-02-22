@@ -1,0 +1,183 @@
+<!--**********************************
+	Content body start
+***********************************-->
+<div class="content-body">
+	<!-- row -->
+	<div class="container-fluid">
+		<!-- Add Order -->
+		<div class="event-tabs mb-3">
+			<div class="d-flex flex-wrap mb-2 align-items-center justify-content-between">
+				
+				<div class="mb-3 mr-3">
+					<h6 class="fs-16 text-black font-w600 mb-0">568 Total Orders</h6>
+					<span class="fs-14">Based your preferences</span>
+				</div>
+				<ul ngbNav #nav="ngbNav"  class="nav nav-tabs mb-3" role="tablist">
+					<li class="nav-item" ngbNavItem="all">
+						<a class="nav-link" data-toggle="tab" href="#All" role="tab" aria-selected="true" ngbNavLink>
+							All
+						</a>
+						<ng-template ngbNavContent>
+							<div class="table-responsive">
+								<table id="example2" class="table card-table event-table display dataTablesCard">
+									<thead>
+										<tr>
+											<th>Order ID</th>
+											<th>Date</th>
+											<th>Event Name</th>
+											<th>Customer </th>
+											<th>Location</th>
+											<th>Sold Ticket</th>
+											<th>Available</th>
+											<th>Refund</th>
+											<th>Total Revenue</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor = "let event of allEvent">
+											<td>{{event.order_id}}</td>
+											<td [innerHtml]="event.date"></td>
+											<td><span class="text-nowrap" [innerHtml]="event.event_name"></span></td>
+											<td>{{event.customer}}</td>
+											<td>{{event.location}}</td>
+											<td>{{event.sold_ticket}}</td>
+											<td>{{event.available}}</td>
+											<td><strong class="{{event.refund_class}}">{{event.refund}}</strong></td>
+											<td><a href="javascript:void(0)" class="btn btn-primary btn-sm light">{{event.total_revenue}}</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</ng-template>
+					</li>
+					<li class="nav-item" ngbNavItem="sold">
+						<a class="nav-link" data-toggle="tab" href="#Sold" role="tab" aria-selected="false" ngbNavLink>
+							Sold
+						</a>
+						<ng-template ngbNavContent>
+							<div class="table-responsive">
+								<table id="example3" class="table card-table event-table display dataTablesCard">
+									<thead>
+										<tr>
+											<th>Order ID</th>
+											<th>Date</th>
+											<th>Event Name</th>
+											<th>Customer </th>
+											<th>Location</th>
+											<th>Sold Ticket</th>
+											<th>Available</th>
+											<th>Refund</th>
+											<th>Total Revenue</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor = "let event of allEvent">
+											<td>{{event.order_id}}</td>
+											<td [innerHtml]="event.date"></td>
+											<td><span class="text-nowrap" [innerHtml]="event.event_name"></span></td>
+											<td>{{event.customer}}</td>
+											<td>{{event.location}}</td>
+											<td>{{event.sold_ticket}}</td>
+											<td>{{event.available}}</td>
+											<td><strong class="{{event.refund_class}}">{{event.refund}}</strong></td>
+											<td><a href="javascript:void(0)" class="btn btn-primary btn-sm light">{{event.total_revenue}}</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</ng-template>
+					</li>
+					<li class="nav-item" ngbNavItem="refunded">
+						<a class="nav-link" data-toggle="tab" href="#Refunded" role="tab" aria-selected="false" ngbNavLink>
+							Refunded
+						</a>
+						<ng-template ngbNavContent>
+							<div class="table-responsive">
+								<table id="example4" class="table card-table event-table display dataTablesCard">
+									<thead>
+										<tr>
+											<th>Order ID</th>
+											<th>Date</th>
+											<th>Event Name</th>
+											<th>Customer </th>
+											<th>Location</th>
+											<th>Sold Ticket</th>
+											<th>Available</th>
+											<th>Refund</th>
+											<th>Total Revenue</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor = "let event of allEvent">
+											<td>{{event.order_id}}</td>
+											<td [innerHtml]="event.date"></td>
+											<td><span class="text-nowrap" [innerHtml]="event.event_name"></span></td>
+											<td>{{event.customer}}</td>
+											<td>{{event.location}}</td>
+											<td>{{event.sold_ticket}}</td>
+											<td>{{event.available}}</td>
+											<td><strong class="{{event.refund_class}}">{{event.refund}}</strong></td>
+											<td><a href="javascript:void(0)" class="btn btn-primary btn-sm light">{{event.total_revenue}}</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</ng-template>
+					</li>
+					<li class="nav-item" ngbNavItem="canceled">
+						<a class="nav-link" data-toggle="tab" href="#Canceled" role="tab" aria-selected="false" ngbNavLink>
+							Canceled
+						</a>
+						<ng-template ngbNavContent>
+							<div class="table-responsive">
+								<table id="example5" class="table card-table event-table display dataTablesCard">
+									<thead>
+										<tr>
+											<th>Order ID</th>
+											<th>Date</th>
+											<th>Event Name</th>
+											<th>Customer </th>
+											<th>Location</th>
+											<th>Sold Ticket</th>
+											<th>Available</th>
+											<th>Refund</th>
+											<th>Total Revenue</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor = "let event of allEvent">
+											<td>{{event.order_id}}</td>
+											<td [innerHtml]="event.date"></td>
+											<td><span class="text-nowrap" [innerHtml]="event.event_name"></span></td>
+											<td>{{event.customer}}</td>
+											<td>{{event.location}}</td>
+											<td>{{event.sold_ticket}}</td>
+											<td>{{event.available}}</td>
+											<td><strong class="{{event.refund_class}}">{{event.refund}}</strong></td>
+											<td><a href="javascript:void(0)" class="btn btn-primary btn-sm light">{{event.total_revenue}}</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</ng-template>
+					</li>
+				</ul>
+				<div class="d-flex mb-3">
+					<mat-form-field class="dashboard-select style-1 mr-3" appearance="fill">
+					  <mat-select [(value)]="selected">
+						<mat-option *ngFor="let timeVal of timePeriod" [value]="timeVal.value">
+						  {{timeVal.viewValue}}
+						</mat-option>
+					  </mat-select>
+					</mat-form-field> 
+					<a href="javascript:void(0)" class="btn btn-primary text-nowrap"><i class="fa fa-file-text scale5 mr-3" aria-hidden="true"></i>Generate Report</a>
+				</div>
+			</div>
+			<div [ngbNavOutlet]="nav" class=""></div>
+		</div>
+		
+	</div>
+</div>
+<!--**********************************
+	Content body end
+***********************************-->

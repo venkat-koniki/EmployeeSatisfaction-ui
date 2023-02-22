@@ -1,0 +1,29 @@
+<div class="card-header pb-0 border-0">
+	<div>
+		<h5 class="mb-0 text-black font-weight-bold">Pie Chart</h5>
+		<p class="fs-14 mb-0">Ticket Sold</p>
+	</div>
+	<mat-form-field class="dashboard-select" appearance="fill">
+	  <mat-select [(value)]="selected">
+		<mat-option *ngFor="let timeVal of timePeriod" [value]="timeVal.value">
+		  {{timeVal.viewValue}}
+		</mat-option>
+	  </mat-select>
+	</mat-form-field>
+</div>
+<div class="card-body">
+	<!-- <div id="chartCircle"></div> -->
+	
+	<apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [plotOptions]="chartOptions.plotOptions"
+    [labels]="chartOptions.labels"
+    [responsive]="chartOptions.responsive"
+    [fill]="chartOptions.fill"
+    [stroke]="chartOptions.stroke"
+    [colors]="chartOptions.colors"
+    [legend]="chartOptions.legend"
+  ></apx-chart>
+  
+</div>

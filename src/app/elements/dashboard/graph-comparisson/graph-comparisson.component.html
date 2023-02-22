@@ -1,0 +1,24 @@
+<div class="card-header align-items-start pb-0 border-0">	
+	<div>
+		<h4 class="fs-16 mb-0 text-black font-w600">Increase 25%</h4>
+		<span class="fs-12">Comparisson</span>
+	</div>
+	<mat-form-field class="dashboard-select" appearance="fill">
+	  <mat-select [(value)]="selected">
+		<mat-option *ngFor="let timeVal of timePeriod" [value]="timeVal.value">
+		  {{timeVal.viewValue}}
+		</mat-option>
+	  </mat-select>
+	</mat-form-field>
+</div>
+<div class="card-body pt-0">
+	<canvas  height="50" baseChart 
+        [datasets]="lineChartData" 
+        [labels]="lineChartLabels" 
+        [options]="lineChartOptions"
+        [colors]="lineChartColors" 
+        [legend]="lineChartLegend" 
+        [chartType]="lineChartType" 
+        [plugins]="lineChartPlugins">
+    </canvas>
+</div>

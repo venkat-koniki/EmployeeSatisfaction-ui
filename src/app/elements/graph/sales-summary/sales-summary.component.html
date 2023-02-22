@@ -1,0 +1,28 @@
+<div class="card-header border-0 pb-0">
+	<h4 class="fs-20 text-black">Sales Summary</h4>
+</div>
+<div class="card-body pt-3">
+	<div class="d-flex justify-content-between align-items-center">	
+		<span class="fs-14">Tuesday</span>
+		<span class="text-black fs-18 font-w500">215,523 pcs</span>
+	</div>
+	
+	
+	<!-- <div id="radialBar"></div> -->
+	
+	<apx-chart
+		[series]="chartOptions.series"
+		[chart]="chartOptions.chart"
+		[plotOptions]="chartOptions.plotOptions"
+		[labels]="chartOptions.labels"
+		[legend]="chartOptions.legend"
+		[colors]="chartOptions.colors"
+		[fill]="chartOptions.fill"
+		[stroke]="chartOptions.stroke"
+	  ></apx-chart>
+	
+	
+	
+	<app-available-ticket></app-available-ticket>
+	
+</div>

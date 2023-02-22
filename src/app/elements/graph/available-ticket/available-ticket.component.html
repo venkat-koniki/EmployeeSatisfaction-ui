@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between align-items-center">
+	<div>
+		<p class="fs-28 text-black font-w600 mb-1">25 Left</p>
+		<span>Available Ticket</span>
+	</div>
+	<apx-chart class="event-chart"
+		[series]="chartOptions.series"
+		[chart]="chartOptions.chart"
+		[plotOptions]="chartOptions.plotOptions"
+		[labels]="chartOptions.labels"
+		[legend]="chartOptions.legend"
+		[colors]="chartOptions.colors"
+	 ></apx-chart>
+</div>

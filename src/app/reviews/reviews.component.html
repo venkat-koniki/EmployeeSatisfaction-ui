@@ -1,0 +1,279 @@
+<!--**********************************
+	Content body start
+***********************************-->
+<div class="content-body">
+	<!-- row -->
+	<div class="container-fluid">
+		<!-- Add Order -->
+		<div class="event-tabs mb-3">
+			<div class="d-flex flex-wrap mb-2 align-items-center justify-content-between">
+				
+				<div class="mb-3 mr-3">
+					<h6 class="fs-16 text-black font-w600 mb-0">568 Total Orders</h6>
+					<span class="fs-14">Based your preferences</span>
+                </div>
+				<ul ngbNav #nav="ngbNav"  class="nav nav-tabs mb-3" role="tablist">
+					<li class="nav-item" ngbNavItem="all">
+						<a class="nav-link" data-toggle="tab" href="#All" role="tab" aria-selected="true" ngbNavLink>
+							All
+                        </a>
+						<ng-template ngbNavContent>
+							<div class="table-responsive">
+								<table id="example2" class="table card-table event-table display dataTablesCard">
+									<thead>
+										<tr>
+											<th>
+												<div class="checkbox mr-0 align-self-center">
+													<div class="custom-control custom-checkbox ">
+														<input type="checkbox" class="custom-control-input" id="checkAll" required="" (change)="checkUncheckAll($event)">
+														<label class="custom-control-label" for="checkAll"></label>
+                                                    </div>
+                                                </div>
+                                            </th>
+											<th style="width:250px;">Customer</th>
+											<th class="d-none d-lg-inline-block">Event NAME</th>
+											<th>Stars Review</th>
+											<th>Action</th>
+                                        </tr>
+                                    </thead>
+									<tbody>
+                                        <tr *ngFor = "let item of allStatus; let i= index">
+                                            <td>
+                                                <div class="checkbox mr-0 align-self-center">
+                                                    <div class="custom-control custom-checkbox ">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheckBox_{{i}}" required="" name="tab_all[]">
+                                                        <label class="custom-control-label" for="customCheckBox_{{i}}"></label>
+                                                    </div>
+                                                </div>	
+                                            </td>
+                                            <td>
+                                                <div class="media align-items-center">
+                                                    <img class="img-fluid rounded mr-3 d-none d-xl-inline-block" width="70" src="{{item.image}}" alt="DexignZone">
+                                                    <div class="media-body">
+                                                        <h4 class="font-w600 mb-1 wspace-no"><a href="javascript:void(0)" class="text-black">{{item.user}}</a></h4>
+                                                        <span>{{item.date}}</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">{{item.event_name}}</td>
+                                            <td>
+                                                <span class="star-review d-inline-block mb-2 fs-16 wspace-no">
+                                                    <i *ngFor="let ratings of item.ratings_class " class="{{ratings.icon_class}}"></i>
+                                                </span>
+                                                <p class="mb-0 d-none d-xl-inline-block">{{item.description}}</p>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <a href="javascript:;" class="btn btn-info btn-sm light px-4">Publish</a>
+                                                    <a href="javascript:;" class="btn btn-danger  btn-sm light ml-2 px-4">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ng-template>
+                    </li>
+					<li class="nav-item" ngbNavItem="sold">
+						<a class="nav-link" data-toggle="tab" href="#Sold" role="tab" aria-selected="false" ngbNavLink>
+							Sold
+                        </a>
+						<ng-template ngbNavContent>
+							<div class="table-responsive">
+								<table id="example3" class="table card-table event-table display dataTablesCard">
+									<thead>
+										<tr>
+											<th>
+												<div class="checkbox mr-0 align-self-center">
+													<div class="custom-control custom-checkbox ">
+														<input type="checkbox" class="custom-control-input" id="checkAll" required=""  (change)="checkUncheckAll($event)">
+														<label class="custom-control-label" for="checkAll"></label>
+                                                    </div>
+                                                </div>
+                                            </th>
+											<th style="width:250px;">Customer</th>
+											<th class="d-none d-lg-inline-block">Event NAME</th>
+											<th>Stars Review</th>
+											<th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor = "let item of allSold; let i= index">
+                                            <td>
+                                                <div class="checkbox mr-0 align-self-center">
+                                                    <div class="custom-control custom-checkbox ">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheckBox_{{i}}" required="" name="tab_all[]">
+                                                        <label class="custom-control-label" for="customCheckBox_{{i}}"></label>
+                                                    </div>
+                                                </div>	
+                                            </td>
+                                            <td>
+                                                <div class="media align-items-center">
+                                                    <img class="img-fluid rounded mr-3 d-none d-xl-inline-block" width="70" src="{{item.image}}" alt="DexignZone">
+                                                    <div class="media-body">
+                                                        <h4 class="font-w600 mb-1 wspace-no"><a href="javascript:void(0)" class="text-black">{{item.user}}</a></h4>
+                                                        <span>{{item.date}}</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">{{item.event_name}}</td>
+                                            <td>
+                                                <span class="star-review d-inline-block mb-2 fs-16 wspace-no">
+                                                    <i *ngFor="let ratings of item.ratings_class " class="{{ratings.icon_class}}"></i>
+                                                </span>
+                                                <p class="mb-0 d-none d-xl-inline-block">{{item.description}}</p>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <a href="javascript:;" class="btn btn-info btn-sm light px-4">Publish</a>
+                                                    <a href="javascript:;" class="btn btn-danger  btn-sm light ml-2 px-4">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ng-template>
+                    </li>
+                    <li class="nav-item" ngbNavItem="refunded">
+                        <a class="nav-link" data-toggle="tab" href="#Refunded" role="tab" aria-selected="false" ngbNavLink>
+                            Refunded
+                        </a>
+                        <ng-template ngbNavContent>
+                            <div class="table-responsive">
+                                <table id="example4" class="table card-table event-table display dataTablesCard">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox mr-0 align-self-center">
+                                                    <div class="custom-control custom-checkbox ">
+                                                        <input type="checkbox" class="custom-control-input" id="checkAll3" required="" (change)="checkUncheckAll($event)">
+                                                        <label class="custom-control-label" for="checkAll3"></label>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th style="width:250px;">Customer</th>
+                                            <th class="d-none d-lg-inline-block">Event NAME</th>
+                                            <th>Stars Review</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor = "let item of allRefund; let i= index">
+                                            <td>
+                                                <div class="checkbox mr-0 align-self-center">
+                                                    <div class="custom-control custom-checkbox ">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheckBox_{{i}}" required="" name="tab_all[]">
+                                                        <label class="custom-control-label" for="customCheckBox_{{i}}"></label>
+                                                    </div>
+                                                </div>	
+                                            </td>
+                                            <td>
+                                                <div class="media align-items-center">
+                                                    <img class="img-fluid rounded mr-3 d-none d-xl-inline-block" width="70" src="{{item.image}}" alt="DexignZone">
+                                                    <div class="media-body">
+                                                        <h4 class="font-w600 mb-1 wspace-no"><a href="javascript:void(0)" class="text-black">{{item.user}}</a></h4>
+                                                        <span>{{item.date}}</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">{{item.event_name}}</td>
+                                            <td>
+                                                <span class="star-review d-inline-block mb-2 fs-16 wspace-no">
+                                                    <i *ngFor="let ratings of item.ratings_class " class="{{ratings.icon_class}}"></i>
+                                                </span>
+                                                <p class="mb-0 d-none d-xl-inline-block">{{item.description}}</p>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <a href="javascript:;" class="btn btn-info btn-sm light px-4">Publish</a>
+                                                    <a href="javascript:;" class="btn btn-danger  btn-sm light ml-2 px-4">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ng-template>
+                    </li>
+                    <li class="nav-item" ngbNavItem="canceled">
+                        <a class="nav-link" data-toggle="tab" href="#Canceled" role="tab" aria-selected="false" ngbNavLink>
+                            Canceled
+                        </a>
+                        <ng-template ngbNavContent>
+                            <div class="table-responsive">
+                                <table id="example5" class="table card-table event-table display dataTablesCard">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox mr-0 align-self-center">
+                                                    <div class="custom-control custom-checkbox ">
+                                                        <input type="checkbox" class="custom-control-input" id="checkAll4" required="" (change)="checkUncheckAll($event)">
+                                                        <label class="custom-control-label" for="checkAll4"></label>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th style="width:250px;">Customer</th>
+                                            <th class="d-none d-lg-inline-block">Event NAME</th>
+                                            <th>Stars Review</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor = "let item of allCanceled; let i= index">
+                                            <td>
+                                                <div class="checkbox mr-0 align-self-center">
+                                                    <div class="custom-control custom-checkbox ">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheckBox_{{i}}" required="" name="tab_all[]">
+                                                        <label class="custom-control-label" for="customCheckBox_{{i}}"></label>
+                                                    </div>
+                                                </div>	
+                                            </td>
+                                            <td>
+                                                <div class="media align-items-center">
+                                                    <img class="img-fluid rounded mr-3 d-none d-xl-inline-block" width="70" src="{{item.image}}" alt="DexignZone">
+                                                    <div class="media-body">
+                                                        <h4 class="font-w600 mb-1 wspace-no"><a href="javascript:void(0)" class="text-black">{{item.user}}</a></h4>
+                                                        <span>{{item.date}}</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">{{item.event_name}}</td>
+                                            <td>
+                                                <span class="star-review d-inline-block mb-2 fs-16 wspace-no">
+                                                    <i *ngFor="let ratings of item.ratings_class " class="{{ratings.icon_class}}"></i>
+                                                </span>
+                                                <p class="mb-0 d-none d-xl-inline-block">{{item.description}}</p>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <a href="javascript:;" class="btn btn-info btn-sm light px-4">Publish</a>
+                                                    <a href="javascript:;" class="btn btn-danger  btn-sm light ml-2 px-4">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div class="d-flex mb-3">
+                    <mat-form-field class="dashboard-select style-1 mr-3" appearance="fill">
+                        <mat-select [(value)]="selected">
+                            <mat-option *ngFor="let timeVal of timePeriod" [value]="timeVal.value">
+                                {{timeVal.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> 
+                    <a href="javascript:void(0)" class="btn btn-primary text-nowrap"><i class="fa fa-file-text scale5 mr-3" aria-hidden="true"></i>Generate Report</a>
+                </div>
+            </div>
+            <div [ngbNavOutlet]="nav" class=""></div>
+        </div>
+        
+    </div>
+</div>
+<!--**********************************
+	Content body end
+***********************************-->

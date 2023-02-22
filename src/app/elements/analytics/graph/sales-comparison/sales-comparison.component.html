@@ -1,0 +1,24 @@
+<div class="card-header pb-0 border-0">
+	<div class="mr-auto">
+		<h4 class="fs-20 text-black mb-0">Sales Comparison</h4>
+		<span class="text-black fs-20 font-w300">Than last day</span>
+	</div>
+	<span class="fs-38 text-black font-w600 mr-2">57%</span>
+</div>
+<div class="card-body pt-2 pb-0">
+	<!-- <div id="columnChart"></div> -->
+	
+	<apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [plotOptions]="chartOptions.plotOptions"
+    [responsive]="chartOptions.responsive"
+    [xaxis]="chartOptions.xaxis"
+    [yaxis]="chartOptions.yaxis"
+    [dataLabels]="chartOptions.dataLabels"
+    [legend]="chartOptions.legend"
+    [colors]="chartOptions.colors"
+    [fill]="chartOptions.fill"
+    [grid]="chartOptions.grid"
+  ></apx-chart>
+</div>

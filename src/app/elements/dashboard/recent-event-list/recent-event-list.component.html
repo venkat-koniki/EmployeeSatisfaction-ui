@@ -1,0 +1,22 @@
+<div class="event-bx ">
+<owl-carousel-o [options]="customOptions" class="">
+	<ng-template carouselSlide *ngFor = "let event of data">
+		<div class="items">
+			<div class="image-bx">
+				<img src="{{event.image}}" alt="">
+				<div class="info">
+					<p class="fs-18 font-w600"><a routerLink="/{{event.url}}" class="text-black">{{event.title}}</a></p>
+					<span class="fs-14 text-black d-block mb-3">{{event.location}}</span>
+					<p class="fs-12">{{event.description}}</p>
+					<ul>
+						<li><i class="las la-dollar-sign"></i>{{event.price}}</li>
+						<li><i class="las la-calendar"></i>{{event.date}}</li>
+						<li><i class="fa fa-ticket"></i>{{event.no_of_tickets}}</li>
+						<li><i class="las la-clock"></i>{{event.time}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</ng-template>
+</owl-carousel-o>
+</div>

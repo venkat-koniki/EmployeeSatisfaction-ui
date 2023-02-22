@@ -1,0 +1,51 @@
+<div class="card-header pb-0 d-block d-sm-flex border-0">
+	<h3 class="fs-20 text-black mb-0">Sales Revenue</h3>
+	<div class="card-action revenue-tabs mt-3 mt-sm-0">
+		<ul class="nav nav-tabs" role="tablist" ngbNav #nav="ngbNav" >
+			<li class="nav-item" ngbNavItem="Monthly">
+				<a class="nav-link" data-toggle="tab" href="#monthly" role="tab" aria-selected="false" ngbNavLink>
+					Monthly
+				</a>
+				<ng-template ngbNavContent>
+					<app-monthly></app-monthly>
+				</ng-template>
+			</li>
+			<li class="nav-item" ngbNavItem="Weekly">
+				<a class="nav-link" data-toggle="tab" href="#weekly" role="tab" aria-selected="false" ngbNavLink>
+					Weekly
+				</a>
+				<ng-template ngbNavContent>
+					<app-weekly></app-weekly>
+				</ng-template>
+			</li>
+			<li class="nav-item" ngbNavItem="Daily">
+				<a class="nav-link" data-toggle="tab" href="#today" role="tab" aria-selected="true" ngbNavLink>
+					Daily
+				</a>
+				<ng-template ngbNavContent>
+					<app-daily></app-daily>
+				</ng-template>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- <div class="card-body">
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade show active" id="user" role="tabpanel">
+			
+			<canvas baseChart 
+				[datasets]="lineChartData" 
+				[labels]="lineChartLabels" 
+				[options]="lineChartOptions"
+				[colors]="lineChartColors" 
+				[legend]="lineChartLegend" 
+				[chartType]="lineChartType" 
+				[plugins]="lineChartPlugins">
+			</canvas>
+		</div>
+	</div>
+</div> -->
+			<!-- <canvas id="revenue" class="chartjs"></canvas> -->
+		<div class="card-body">
+			<div [ngbNavOutlet]="nav" class=""></div>
+		</div>
