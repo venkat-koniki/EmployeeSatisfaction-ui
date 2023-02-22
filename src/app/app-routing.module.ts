@@ -127,147 +127,161 @@ import { Error403Component } from './pages/error403/error403.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { Error500Component } from './pages/error500/error500.component';
 import { Error503Component } from './pages/error503/error503.component';
+import { SurveyEntryComponent } from './employee/survey-entry/survey-entry.component';
+import { QuestionComponent } from './employee/question/question.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
+import { FeedbackReportComponent } from './employee/feedback-report/feedback-report.component';
 
 
 
 const routes: Routes = [
-                 {path: '', redirectTo: 'admin/index', pathMatch: 'full' },
-				{
-                    path: 'admin', component: AdminComponent, children: [
-                        {path: '', component: DashboardComponent},
-                        {path: 'index', component: DashboardComponent},
-                        {path: 'dashboard', component: DashboardComponent},
-                        {path: 'event', component: EventComponent},
-                        {path: 'event-detail', component: EventDetailComponent},
-                        {path: 'customers', component: CustomersComponent},
-                        {path: 'analytics', component: AnalyticsComponent},
-                        {path: 'reviews', component: ReviewsComponent},
-                        
-                        {path: 'app-profile', component: ProfileComponent},
-                        {path: 'post-details', component: PostDetailsComponent},
-                        {path: 'email-compose', component: ComposeComponent},
-                        {path: 'email-inbox', component: InboxComponent},
-                        {path: 'email-read', component: ReadComponent},
-                        {path: 'app-calender', component: CalenderComponent},
-                        
-                        {path: 'ecom-product-grid', component: ProductGridComponent},
-                        {path: 'ecom-product-list', component: ProductListComponent},
-                        {path: 'ecom-product-detail', component: ProductDetailComponent},
-                        {path: 'ecom-product-order', component: OrderComponent},
-                        {path: 'ecom-checkout', component: CheckoutComponent},
-                        {path: 'ecom-invoice', component: InvoiceComponent},
-                        {path: 'ecom-customers', component: EcomCustomersComponent},
-                        
-                        {path: 'chart-apex', component: ApexComponent},
-                        {path: 'apex-line', component: LineComponent},
-                        {path: 'apex-area', component: AreaComponent},
-                        {path: 'apex-column', component: ColumnComponent},
-                        {path: 'apex-bar', component: BarComponent},
-                        {path: 'apex-mixed', component: MixedComponent},
-                        {path: 'apex-timeline', component: TimelineComponent},
-                        {path: 'apex-candlestick', component: CandlestickComponent},
-                        {path: 'apex-pie', component: PieComponent},
-                        {path: 'apex-radar', component: RadarComponent},
-                        {path: 'apex-radialbar', component: RadialbarComponent},
-                        {path: 'apex-polar-area', component: PolarAreaComponent},
-                        {path: 'apex-bubble', component: BubbleComponent},
-                        {path: 'apex-scatter', component: ScatterComponent},
-                        {path: 'apex-heatmap', component: HeatmapComponent},
-                        {path: 'apex-treemap', component: TreemapComponent},
-                        {path: 'apex-sparklines', component: SparklinesComponent},
-                        {path: 'chart-chartjs', component: ChartjsComponent},
-                        
-                        
-                        {path: 'ui-accordion', component: AccordionComponent},
-                        {path: 'ui-alert', component: AlertComponent},
-                        {path: 'ui-button', component: ButtonComponent},
-                        {path: 'ui-modal', component: ModalComponent},
-                        {path: 'ui-badge', component: BadgeComponent},
-                        {path: 'ui-button-group', component: ButtonGroupComponent},
-                        {path: 'ui-list-group', component: ListGroupComponent},
-                        {path: 'ui-card', component: CardsComponent},
-                        {path: 'ui-carousel', component: CarouselComponent},
-                        {path: 'ui-datepicker', component: DatepickerComponent},
-                        {path: 'ui-dropdown', component: DropdownComponent},
-                        {path: 'ui-media-object', component: MediaObjectComponent},
-                        {path: 'ui-nav', component: NavComponent},
-                        {path: 'ui-pagination', component: PaginationComponent},
-                        {path: 'ui-popover', component: PopoverComponent},
-                        {path: 'ui-progressbar', component: ProgressbarComponent},
-                        {path: 'ui-rating', component: RatingComponent},
-                        {path: 'ui-table', component: TableComponent},
-                        {path: 'ui-timepicker', component: TimepickerComponent},
-                        {path: 'ui-toast', component: ToastComponent},
-                        {path: 'ui-tooltip', component: TooltipComponent},
-                        {path: 'ui-typeahead', component: TypeaheadComponent},
-                        {path: 'ui-typography', component: TypographyComponent},
-                        {path: 'ui-grid', component: GridComponent},
-                        
-                        
-                        
-                        {path: 'mat-autocomplete', component: DzmtAutocompleteComponent},
-                        {path: 'mat-badge', component: DzmtBadgeComponent},
-                        {path: 'mat-bottom-sheet', component: DzmtBottomSheetComponent},
-                        {path: 'mat-button', component: DzmtButtonComponent},
-                        {path: 'mat-button-toggle', component: DzmtButtonToggleComponent},
-                        {path: 'mat-card', component: DzmtCardComponent},
-                        {path: 'mat-checkbox', component: DzmtCheckboxComponent},
-                        {path: 'mat-chips', component: DzmtChipsComponent},
-                        {path: 'mat-datepicker', component: DzmtDatepickerComponent},
-                        {path: 'mat-dialog', component: DzmtDialogComponent},
-                        {path: 'mat-divider', component: DzmtDividerComponent},
-                        {path: 'mat-expansion', component: DzmtExpansionComponent},
-                        {path: 'mat-form-field', component: DzmtFormFieldComponent},
-                        {path: 'mat-grid-list', component: DzmtGridListComponent},
-                        {path: 'mat-icon', component: DzmtIconComponent},
-                        {path: 'mat-input', component: DzmtInputComponent},
-                        {path: 'mat-list', component: DzmtListComponent},
-                        {path: 'mat-menu', component: DzmtMenuComponent},
-                        {path: 'mat-paginator', component: DzmtPaginatorComponent},
-                        {path: 'mat-progress-bar', component: DzmtProgressBarComponent},
-                        {path: 'mat-progress-spinner', component: DzmtProgressSpinnerComponent},
-                        {path: 'mat-radio', component: DzmtRadioComponent},
-                        {path: 'mat-ripple', component: DzmtRippleComponent},
-                        {path: 'mat-select', component: DzmtSelectComponent},
-                        {path: 'mat-sidenav', component: DzmtSidenavComponent},
-                        {path: 'mat-slide-toggle', component: DzmtSlideToggleComponent},
-                        {path: 'mat-slider', component: DzmtSliderComponent},
-                        {path: 'mat-snack-bar', component: DzmtSnackBarComponent},
-                        {path: 'mat-sort', component: DzmtSortComponent},
-                        {path: 'mat-stepper', component: DzmtStepperComponent},
-                        {path: 'mat-table', component: DzmtTableComponent},
-                        {path: 'mat-tab', component: DzmtTabsComponent},
-                        {path: 'mat-tooltip', component: DzmtTooltipComponent},
-                        {path: 'mat-tree', component: DzmtTreeComponent},
-                        {path: 'mat-toolbar', component: DzmtToolbarComponent},
-                        
-                        {path: 'uc-nestable', component: NestableComponent},
-                        {path: 'uc-lightgallery', component: LightGalleryComponent},
-                        
-                        {path: 'widget-basic', component: WidgetComponent},
-                        
-                        {path: 'form-element', component: ElementsComponent},
-                        {path: 'form-validate', component: FormValidateComponent},
-                        
-                    ]
+                 {path: '', redirectTo: 'login', pathMatch: 'full' },
+                 {path:'login',component:LoginComponent},                 
+                 {
+                  path: 'eadmin', component: AdminComponent, children: [
+                    {path: 'dashboard', component: DashboardComponent},
+                    {path:'employees',component:EmployeeComponent},
+                    {path:'qstns',component:QuestionComponent},
+                    {path:'report',component:FeedbackReportComponent},
+                  ]
+                 },
+                 {
+                  path: 'employee', component: AdminComponent, children: [
+                    {path:'survey-entry',component:SurveyEntryComponent},
+                  ]
+                 },
+                //  {path: '**', component: Error404Component}   
+                {
+                  path: 'admin', component: AdminComponent, children: [
+                      {path: '', component: DashboardComponent},
+                      {path: 'index', component: DashboardComponent},
+                      {path: 'dashboard', component: DashboardComponent},
+                      {path: 'event', component: EventComponent},
+                      {path: 'event-detail', component: EventDetailComponent},
+                      {path: 'customers', component: CustomersComponent},
+                      {path: 'analytics', component: AnalyticsComponent},
+                      {path: 'reviews', component: ReviewsComponent},
+                      
+                      {path: 'app-profile', component: ProfileComponent},
+                      {path: 'post-details', component: PostDetailsComponent},
+                      {path: 'email-compose', component: ComposeComponent},
+                      {path: 'email-inbox', component: InboxComponent},
+                      {path: 'email-read', component: ReadComponent},
+                      {path: 'app-calender', component: CalenderComponent},
+                      
+                      {path: 'ecom-product-grid', component: ProductGridComponent},
+                      {path: 'ecom-product-list', component: ProductListComponent},
+                      {path: 'ecom-product-detail', component: ProductDetailComponent},
+                      {path: 'ecom-product-order', component: OrderComponent},
+                      {path: 'ecom-checkout', component: CheckoutComponent},
+                      {path: 'ecom-invoice', component: InvoiceComponent},
+                      {path: 'ecom-customers', component: EcomCustomersComponent},
+                      
+                      {path: 'chart-apex', component: ApexComponent},
+                      {path: 'apex-line', component: LineComponent},
+                      {path: 'apex-area', component: AreaComponent},
+                      {path: 'apex-column', component: ColumnComponent},
+                      {path: 'apex-bar', component: BarComponent},
+                      {path: 'apex-mixed', component: MixedComponent},
+                      {path: 'apex-timeline', component: TimelineComponent},
+                      {path: 'apex-candlestick', component: CandlestickComponent},
+                      {path: 'apex-pie', component: PieComponent},
+                      {path: 'apex-radar', component: RadarComponent},
+                      {path: 'apex-radialbar', component: RadialbarComponent},
+                      {path: 'apex-polar-area', component: PolarAreaComponent},
+                      {path: 'apex-bubble', component: BubbleComponent},
+                      {path: 'apex-scatter', component: ScatterComponent},
+                      {path: 'apex-heatmap', component: HeatmapComponent},
+                      {path: 'apex-treemap', component: TreemapComponent},
+                      {path: 'apex-sparklines', component: SparklinesComponent},
+                      {path: 'chart-chartjs', component: ChartjsComponent},
+                      
+                      
+                      {path: 'ui-accordion', component: AccordionComponent},
+                      {path: 'ui-alert', component: AlertComponent},
+                      {path: 'ui-button', component: ButtonComponent},
+                      {path: 'ui-modal', component: ModalComponent},
+                      {path: 'ui-badge', component: BadgeComponent},
+                      {path: 'ui-button-group', component: ButtonGroupComponent},
+                      {path: 'ui-list-group', component: ListGroupComponent},
+                      {path: 'ui-card', component: CardsComponent},
+                      {path: 'ui-carousel', component: CarouselComponent},
+                      {path: 'ui-datepicker', component: DatepickerComponent},
+                      {path: 'ui-dropdown', component: DropdownComponent},
+                      {path: 'ui-media-object', component: MediaObjectComponent},
+                      {path: 'ui-nav', component: NavComponent},
+                      {path: 'ui-pagination', component: PaginationComponent},
+                      {path: 'ui-popover', component: PopoverComponent},
+                      {path: 'ui-progressbar', component: ProgressbarComponent},
+                      {path: 'ui-rating', component: RatingComponent},
+                      {path: 'ui-table', component: TableComponent},
+                      {path: 'ui-timepicker', component: TimepickerComponent},
+                      {path: 'ui-toast', component: ToastComponent},
+                      {path: 'ui-tooltip', component: TooltipComponent},
+                      {path: 'ui-typeahead', component: TypeaheadComponent},
+                      {path: 'ui-typography', component: TypographyComponent},
+                      {path: 'ui-grid', component: GridComponent},
+                      
+                      
+                      
+                      {path: 'mat-autocomplete', component: DzmtAutocompleteComponent},
+                      {path: 'mat-badge', component: DzmtBadgeComponent},
+                      {path: 'mat-bottom-sheet', component: DzmtBottomSheetComponent},
+                      {path: 'mat-button', component: DzmtButtonComponent},
+                      {path: 'mat-button-toggle', component: DzmtButtonToggleComponent},
+                      {path: 'mat-card', component: DzmtCardComponent},
+                      {path: 'mat-checkbox', component: DzmtCheckboxComponent},
+                      {path: 'mat-chips', component: DzmtChipsComponent},
+                      {path: 'mat-datepicker', component: DzmtDatepickerComponent},
+                      {path: 'mat-dialog', component: DzmtDialogComponent},
+                      {path: 'mat-divider', component: DzmtDividerComponent},
+                      {path: 'mat-expansion', component: DzmtExpansionComponent},
+                      {path: 'mat-form-field', component: DzmtFormFieldComponent},
+                      {path: 'mat-grid-list', component: DzmtGridListComponent},
+                      {path: 'mat-icon', component: DzmtIconComponent},
+                      {path: 'mat-input', component: DzmtInputComponent},
+                      {path: 'mat-list', component: DzmtListComponent},
+                      {path: 'mat-menu', component: DzmtMenuComponent},
+                      {path: 'mat-paginator', component: DzmtPaginatorComponent},
+                      {path: 'mat-progress-bar', component: DzmtProgressBarComponent},
+                      {path: 'mat-progress-spinner', component: DzmtProgressSpinnerComponent},
+                      {path: 'mat-radio', component: DzmtRadioComponent},
+                      {path: 'mat-ripple', component: DzmtRippleComponent},
+                      {path: 'mat-select', component: DzmtSelectComponent},
+                      {path: 'mat-sidenav', component: DzmtSidenavComponent},
+                      {path: 'mat-slide-toggle', component: DzmtSlideToggleComponent},
+                      {path: 'mat-slider', component: DzmtSliderComponent},
+                      {path: 'mat-snack-bar', component: DzmtSnackBarComponent},
+                      {path: 'mat-sort', component: DzmtSortComponent},
+                      {path: 'mat-stepper', component: DzmtStepperComponent},
+                      {path: 'mat-table', component: DzmtTableComponent},
+                      {path: 'mat-tab', component: DzmtTabsComponent},
+                      {path: 'mat-tooltip', component: DzmtTooltipComponent},
+                      {path: 'mat-tree', component: DzmtTreeComponent},
+                      {path: 'mat-toolbar', component: DzmtToolbarComponent},
+                      
+                      {path: 'uc-nestable', component: NestableComponent},
+                      {path: 'uc-lightgallery', component: LightGalleryComponent},
+                      
+                      {path: 'widget-basic', component: WidgetComponent},
+                      
+                      {path: 'form-element', component: ElementsComponent},
+                      {path: 'form-validate', component: FormValidateComponent},
+                      
+                  ]
                 },
-                
-                
-                        {path: 'page-register', component: RegisterComponent},
-                        {path: 'page-login', component: LoginComponent},
-                        {path: 'page-lock-screen', component: LockScreenComponent},
-                        {path: 'page-forgot-password', component: ForgotPasswordComponent},
-                        {path: 'page-error-400', component: Error400Component},
-                        {path: 'page-error-403', component: Error403Component},
-                        {path: 'page-error-404', component: Error404Component},
-                        {path: 'page-error-500', component: Error500Component},
-                        {path: 'page-error-503', component: Error503Component},
-
-                        {path: '**', component: Error404Component},
-
-                
-                
-              ];
+            
+            
+                    {path: 'page-register', component: RegisterComponent},
+                    {path: 'page-login', component: LoginComponent},
+                    {path: 'page-lock-screen', component: LockScreenComponent},
+                    {path: 'page-forgot-password', component: ForgotPasswordComponent},
+                    {path: 'page-error-400', component: Error400Component},
+                    {path: 'page-error-403', component: Error403Component},
+                    {path: 'page-error-404', component: Error404Component},
+                    {path: 'page-error-500', component: Error500Component},
+                    {path: 'page-error-503', component: Error503Component},             
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],

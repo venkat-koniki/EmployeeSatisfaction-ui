@@ -41,9 +41,12 @@ export class NavigationComponent implements OnInit {
 		this.toggleIcon = !this.toggleIcon;
 	}
     
+  empadminArray=[
+    '/employees',
+    '/qstns'
+  ];
     
-    
-    dashboardArray = [
+  dashboardArray = [
          '/admin',
          '/admin/index',
          '/admin/event',

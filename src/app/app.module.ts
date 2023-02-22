@@ -696,6 +696,15 @@ import { FormValidateComponent } from './forms/form-validate/form-validate.compo
 
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+
+
+
+
+
+
+
+
+
 import { LockScreenComponent } from './pages/lock-screen/lock-screen.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { Error400Component } from './pages/error400/error400.component';
@@ -703,6 +712,10 @@ import { Error403Component } from './pages/error403/error403.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { Error500Component } from './pages/error500/error500.component';
 import { Error503Component } from './pages/error503/error503.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
+import { QuestionComponent } from './employee/question/question.component';
+import { FeedbackReportComponent } from './employee/feedback-report/feedback-report.component';
+import { SurveyEntryComponent } from './employee/survey-entry/survey-entry.component';
 
 @NgModule({
   declarations: [
@@ -1333,6 +1346,10 @@ import { Error503Component } from './pages/error503/error503.component';
 	Error404Component,
 	Error500Component,
 	Error503Component,
+ EmployeeComponent,
+ QuestionComponent,
+ FeedbackReportComponent,
+ SurveyEntryComponent,
     
     
   ],

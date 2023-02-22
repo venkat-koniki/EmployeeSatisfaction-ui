@@ -3,8 +3,23 @@
 ***********************************-->
 <div class="deznav">
     <div class="deznav-scroll" [perfectScrollbar]>
-        <a href="javascript:void(0)" class="add-menu-sidebar" data-toggle="modal" data-target="#addOrderModalside" (click)="open(content)">+ New Event</a>
         <ul class="metismenu"  metis-menu>
+            <li class="{{(currentHref == '/eadmin/report') ? 'mm-active' : ''}}">
+                <a [routerLink]="['/eadmin/report']" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-settings-2"></i>
+                    <span class="nav-text">Report</span>
+                </a>
+            </li>
+            <li [ngClass]="{'mm-active': empadminArray.indexOf(currentHref) > -1}">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Configuration</span>
+                </a>
+                <ul aria-expanded="false"  [ngClass]="{'mm-show': dashboardArray.indexOf(currentHref) > -1}">
+                    <li><a class="{{(currentHref == '/eadmin/employees' || currentHref == '/eadmin') ? 'mm-active' : ''}}" [routerLink]="['/eadmin/employees']">Employess</a></li>
+                    <li><a class="{{(currentHref == '/eadmin/qstns') ? 'mm-active' : ''}}" [routerLink]="['/eadmin/qstns']">Questions</a></li>
+                </ul>
+            </li>
             <li [ngClass]="{'mm-active': dashboardArray.indexOf(currentHref) > -1}">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
@@ -205,15 +220,9 @@
                 </ul>
             </li>
         </ul>
-        <div class="copyright">
-            <p><strong>Acara Ticketing Dashboard</strong> © 2021 All Rights Reserved</p>
-            <p>Made with <span [ngClass]="{'': toggleIcon, 'heart-blast': !toggleIcon}" class="heart" (click)="toggleLoveIcon()"></span> by DexignZone</p>
-        </div>
     </div>
 </div>
-<!--**********************************
-    Sidebar end
-***********************************-->
+
 
 
 <ng-template #content let-modal>
